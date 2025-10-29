@@ -8,9 +8,9 @@
 ## Reference Architecture
 ```mermaid
 graph TD
-    gha[GitHub Actions Runner] -->|Render config + bake image| artifact[(Config bundle + image)]
+    gha[GitHub Actions Runner] -->|Render config + bake image| artifact[Config bundle + image]
     artifact -->|Push| lsRegistry[AWS Lightsail Container Registry]
-    lsRegistry -->|Deploy| lsService[Lightsail Container Service (Micro)]
+    lsRegistry -->|Deploy| lsService[Lightsail Container Service Micro]
     secrets[Secrets Manager / GitHub OIDC] -->|Inject env vars| lsService
     lsService --> users[Vision/Reality Clients]
 ```
